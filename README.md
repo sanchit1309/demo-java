@@ -91,16 +91,6 @@ everything that you need to get started with web, mobile, visual, functional and
    $ export SAUCE_USERNAME="username"
    $ export SAUCE_ACCESS_KEY="accessKey"
    ```
-   ###### Windows:
-   ```
-   > set SAUCE_USERNAME="username"
-   > set SAUCE_ACCESS_KEY="accessKey"
-   ```
-   > To set an environment variables permanently in Windows, you must append it to the `PATH` variable.
-   
-   > Go to **Control Panel > System > Windows version > Advanced System Settings > Environment Variables > System Variables > Edit > New**
-   
-   > Then set the "Name" and "Value" for each variable
    
 9. Test the environment variables
     ###### Mac OSX:
@@ -108,22 +98,15 @@ everything that you need to get started with web, mobile, visual, functional and
     $ echo $SAUCE_USERNAME
     $ echo $SAUCE_ACCESS_KEY
     ```
-    > ***WARNING FOR UNIX USERS!***:
-    > If you have problems setting your environment variables, run the following commands in your terminal:
-    ```
-    $ launchctl setenv SAUCE_USERNAME $SAUCE_USERNAME
-    $ launchctl setenv SAUCE_ACCESS_KEY $SAUCE_ACCESS_KEY
-    ```
-    ###### Windows:
-    ```
-    > echo %SAUCE_USERNAME%
-    > echo %SAUCE_ACCESS_KEY%
-    ```
 
 <br />
 
 #### Run a Maven Test
 
+1. Go to **appium-junit4-examples**
+    ```
+   $ cd appium-junit4-examples
+   ```
 1. Run the following command to update any package dependencies:
     ```
     $ mvn dependency:resolve
@@ -134,18 +117,7 @@ everything that you need to get started with web, mobile, visual, functional and
     ```
 3. Finally, run the following test to see if you've properly configured the test environment:
     ```
-    $ mvn test -Dtest=Module2TestNGTest -pl on-boarding-modules/testng
-
-    ```
-
-    > If you wish to run a specific test/sub-module in this emusim_testng use the following command:
-    >   ```
-    >   # for running a specific test:
-    >   mvn test -Dtest=testname
-    > 
-    >   # for running a specific sub-module
-    >   mvn test -pl subproject/
-    >   ```
+    $ mvn clean test -Dtest=AndroidNativeAppTest
 
 > ###### Disclaimer:
 >
