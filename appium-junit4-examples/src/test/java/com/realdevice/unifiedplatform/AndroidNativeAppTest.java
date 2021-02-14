@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
+import org.openqa.selenium.By;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -43,15 +44,17 @@ public class AndroidNativeAppTest {
         //Not specifying platformVersion or the exact device is the most likely to
         //find a device in the cloud
         capabilities.setCapability("platformName", "android");
-        capabilities.setCapability("deviceName", "Google Pixel.*");
+        capabilities.setCapability("deviceName", "Samsung Galaxy S9.*");
 
-        capabilities.setCapability("idleTimeout", "90");
+        capabilities.setCapability("idleTimeout", "150");
         capabilities.setCapability("noReset", "true");
-        capabilities.setCapability("newCommandTimeout", "90");
-        capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
+        capabilities.setCapability("newCommandTimeout", "150");
+        capabilities.setCapability("appActivity", "com.et.reader.activities.SplashActivity");
+        capabilities.setCapability("appWaitActivity", "com.et.reader.activities.LoginActivity");
+        capabilities.setCapability("appPackage", "com.et.reader.activities");
         capabilities.setCapability("name", name.getMethodName());
         capabilities.setCapability("app", "storage:filename=" +
-                "Android.SauceLabs.Mobile.Sample.app.2.7.0.apk");
+                "app_release-4.1.3_2102072100.apk");
 
         driver = new AndroidDriver<>(
                 new URL("https://" + System.getenv("SAUCE_USERNAME") + ":" +
@@ -67,5 +70,8 @@ public class AndroidNativeAppTest {
         WebDriverWait wait = new WebDriverWait(getDriver(), 10000);
         WebElement loginField = wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId("test-Username")));
         assertTrue(loginField.isDisplayed());
+
+//        driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id, 'et_account_verification_phone_number')]")).sendKeys("9999999999"); //Enter Mobile No
+//        driver.hideKeyboard(); //Hide keyboard
     }
 }
