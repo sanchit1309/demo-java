@@ -11,13 +11,217 @@
     <modules>
         <module>appium-junit4-examples</module>
     </modules>
+
+    <properties>
+        <testng-version>6.11</testng-version>
+        <selenium-java-version>3.14.0</selenium-java-version>
+        <javaClient-version>7.0.0</javaClient-version>
+        <reportng-version>1.1.4</reportng-version>
+        <maven-compiler-plugin-version>3.6.0</maven-compiler-plugin-version>
+        <java-version>1.8</java-version>
+        <maven-surefire-plugin-version>2.20</maven-surefire-plugin-version>
+        <guice-version>3.0</guice-version>
+        <velocity-version>1.7</velocity-version>
+        <jaxp-api-version>1.4.5</jaxp-api-version>
+        <mail-version>1.4.7</mail-version>
+        <json-simple-version>1.1.1</json-simple-version>
+        <ganymed-ssh2-version>262</ganymed-ssh2-version>
+        <mysql-version>5.1.6</mysql-version>
+        <htmlunit-version>2.18</htmlunit-version>
+        <mongo-java-driver-version>3.2.2</mongo-java-driver-version>
+        <harlib-version>1.1.2</harlib-version>
+        <poi-version>3.13</poi-version>
+        <netty.version>4.0.23.Final</netty.version>
+        <browsermob-core>2.1.5</browsermob-core>
+        <bouncycastle.version>1.51</bouncycastle.version>
+        <extentreports-version>2.41.2</extentreports-version>
+        <poi-ooxml-version>3.14</poi-ooxml-version>
+        <rest-assured-version>3.0.7</rest-assured-version>
+        <log4j.version>1.2.17</log4j.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+
     <dependencies>
+
+        <dependency>
+            <groupId>de.sstoehr</groupId>
+            <artifactId>har-reader</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest-assured-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.relevantcodes</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${extentreports-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.lightbody.bmp</groupId>
+            <artifactId>browsermob-core</artifactId>
+            <version>${browsermob-core}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poi-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi-ooxml-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>1.4.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>${json-simple-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.uncommons</groupId>
+            <artifactId>reportng</artifactId>
+            <version>${reportng-version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.testng</groupId>
+                    <artifactId>testng</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>${guice-version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>${velocity-version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>javax.xml.parsers</groupId>
+            <artifactId>jaxp-api</artifactId>
+            <version>${jaxp-api-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>${mail-version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>ch.ethz.ganymed</groupId>
+            <artifactId>ganymed-ssh2</artifactId>
+            <version>${ganymed-ssh2-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+            <version>${htmlunit-version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>edu.umass.cs.benchlab</groupId>
+            <artifactId>harlib</artifactId>
+            <version>${harlib-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.6.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.9.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.java-diff-utils</groupId>
+            <artifactId>java-diff-utils</artifactId>
+            <version>4.0</version>
+        </dependency>
+
+        <!-- Dependency for Email Java API -->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>javax.mail-api</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.12.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>1.10.3</version>
+        </dependency>
+
+
+
+
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.8</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>com.saucelabs</groupId>
             <artifactId>sauce_bindings</artifactId>

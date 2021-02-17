@@ -1,0 +1,477 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "STOCK_NIFTY": {
+      "type": "object",
+      "properties": {
+        "SUMMARY": {
+          "type": "object",
+          "properties": {
+            "position": {
+              "type": "integer"
+            },
+            "SPARK_LINE_NIFTY": {
+              "type": "string"
+            },
+            "dateTimeLang": {
+              "type": "string"
+            },
+            "lasttradeddate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "position",
+            "SPARK_LINE_NIFTY",
+            "dateTimeLang",
+            "lasttradeddate"
+          ]
+        },
+        "INDEX_DETAIL": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Advances": {
+                  "type": "integer"
+                },
+                "DateTime": {
+                  "type": "string"
+                },
+                "CurrentIndexValue": {
+                  "type": "string"
+                },
+                "NoChange": {
+                  "type": "integer"
+                },
+                "Declines": {
+                  "type": "integer"
+                },
+                "IndexName": {
+                  "type": "string"
+                },
+                "PercentChange": {
+                  "type": "string"
+                },
+                "NetChange": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Advances",
+                "DateTime",
+                "CurrentIndexValue",
+                "NoChange",
+                "Declines",
+                "IndexName",
+                "PercentChange",
+                "NetChange"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "SUMMARY",
+        "INDEX_DETAIL"
+      ]
+    },
+    "RIGHT": {
+      "type": "object",
+      "properties": {
+        "SUMMARY": {
+          "type": "object"
+        },
+        "RIGHT": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "SUMMARY",
+        "RIGHT"
+      ]
+    },
+    "CURRENCY_SPOT_PAIR_USD_INR": {
+      "type": "object",
+      "properties": {
+        "SUMMARY": {
+          "type": "object",
+          "properties": {
+            "position": {
+              "type": "integer"
+            },
+            "totalRecords": {
+              "type": "integer"
+            },
+            "lasttradeddate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "position",
+            "totalRecords",
+            "lasttradeddate"
+          ]
+        },
+        "CURRENCY": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "currencyPairName": {
+                  "type": "string"
+                },
+                "spotRate": {
+                  "type": "number"
+                },
+                "percentChange": {
+                  "type": "number"
+                },
+                "change": {
+                  "type": "string"
+                },
+                "dataUpdated": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "currencyPairName",
+                "spotRate",
+                "percentChange",
+                "change",
+                "dataUpdated"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "SUMMARY",
+        "CURRENCY"
+      ]
+    },
+    "MARKET_DETAIL": {
+      "type": "object",
+      "properties": {
+        "SUMMARY": {
+          "type": "object"
+        },
+        "MARKET_STATUS": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "InstrumentID": {
+                  "type": "string"
+                },
+                "Date": {
+                  "type": "string"
+                },
+                "TradingEndTime": {
+                  "type": "string"
+                },
+                "Purpose": {
+                  "type": "string"
+                },
+                "TradingStartTime": {
+                  "type": "string"
+                },
+                "MarketStatus": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "InstrumentID",
+                "Date",
+                "TradingEndTime",
+                "Purpose",
+                "TradingStartTime",
+                "MarketStatus"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "SUMMARY",
+        "MARKET_STATUS"
+      ]
+    },
+    "COMMODITY_MARKET": {
+      "type": "object",
+      "properties": {
+        "SUMMARY": {
+          "type": "object",
+          "properties": {
+            "position": {
+              "type": "integer"
+            },
+            "lasttradeddate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "position",
+            "lasttradeddate"
+          ]
+        },
+        "COMMODITY_ITEMS": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "LastTradedPrice": {
+                  "type": "string"
+                },
+                "trend": {
+                  "type": "string"
+                },
+                "Symbol": {
+                  "type": "string"
+                },
+                "PercentChange": {
+                  "type": "string"
+                },
+                "expirydate": {
+                  "type": "string"
+                },
+                "CommodityName": {
+                  "type": "string"
+                },
+                "NetChange": {
+                  "type": "string"
+                },
+                "SpotPrice": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "LastTradedPrice",
+                "trend",
+                "Symbol",
+                "PercentChange",
+                "expirydate",
+                "CommodityName",
+                "NetChange",
+                "SpotPrice"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "LastTradedPrice": {
+                  "type": "string"
+                },
+                "trend": {
+                  "type": "string"
+                },
+                "Symbol": {
+                  "type": "string"
+                },
+                "PercentChange": {
+                  "type": "string"
+                },
+                "expirydate": {
+                  "type": "string"
+                },
+                "CommodityName": {
+                  "type": "string"
+                },
+                "NetChange": {
+                  "type": "string"
+                },
+                "SpotPrice": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "LastTradedPrice",
+                "trend",
+                "Symbol",
+                "PercentChange",
+                "expirydate",
+                "CommodityName",
+                "NetChange",
+                "SpotPrice"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "LastTradedPrice": {
+                  "type": "string"
+                },
+                "trend": {
+                  "type": "string"
+                },
+                "Symbol": {
+                  "type": "string"
+                },
+                "PercentChange": {
+                  "type": "string"
+                },
+                "expirydate": {
+                  "type": "string"
+                },
+                "CommodityName": {
+                  "type": "string"
+                },
+                "NetChange": {
+                  "type": "string"
+                },
+                "SpotPrice": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "LastTradedPrice",
+                "trend",
+                "Symbol",
+                "PercentChange",
+                "expirydate",
+                "CommodityName",
+                "NetChange",
+                "SpotPrice"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "SUMMARY",
+        "COMMODITY_ITEMS"
+      ]
+    },
+    "STOCK_SENSX": {
+      "type": "object",
+      "properties": {
+        "SUMMARY": {
+          "type": "object",
+          "properties": {
+            "position": {
+              "type": "integer"
+            },
+            "dateTimeLang": {
+              "type": "string"
+            },
+            "lasttradeddate": {
+              "type": "string"
+            },
+            "SPARK_LINE_SENSEX": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "position",
+            "dateTimeLang",
+            "lasttradeddate",
+            "SPARK_LINE_SENSEX"
+          ]
+        },
+        "INDEX_DETAIL": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Advances": {
+                  "type": "integer"
+                },
+                "DateTime": {
+                  "type": "string"
+                },
+                "CurrentIndexValue": {
+                  "type": "string"
+                },
+                "NoChange": {
+                  "type": "integer"
+                },
+                "Declines": {
+                  "type": "integer"
+                },
+                "IndexName": {
+                  "type": "string"
+                },
+                "PercentChange": {
+                  "type": "string"
+                },
+                "NetChange": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Advances",
+                "DateTime",
+                "CurrentIndexValue",
+                "NoChange",
+                "Declines",
+                "IndexName",
+                "PercentChange",
+                "NetChange"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "SUMMARY",
+        "INDEX_DETAIL"
+      ]
+    },
+    "LIVE_TV": {
+      "type": "object",
+      "properties": {
+        "SUMMARY": {
+          "type": "object",
+          "properties": {
+            "position": {
+              "type": "integer"
+            },
+            "AUDIO_URL_AKAMAI": {
+              "type": "string"
+            },
+            "URL_AKAMAI": {
+              "type": "string"
+            },
+            "AUDIO_URL": {
+              "type": "string"
+            },
+            "URL": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "position",
+            "AUDIO_URL_AKAMAI",
+            "URL_AKAMAI",
+            "AUDIO_URL",
+            "URL"
+          ]
+        },
+        "LIVE_TV_DATA": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "SUMMARY",
+        "LIVE_TV_DATA"
+      ]
+    }
+  },
+  "required": [
+    "STOCK_NIFTY",
+    "RIGHT",
+    "CURRENCY_SPOT_PAIR_USD_INR",
+    "MARKET_DETAIL",
+    "COMMODITY_MARKET",
+    "STOCK_SENSX",
+    "LIVE_TV"
+  ]
+}
